@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temi Captions</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    /* Face */
+    .face {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .eyes {
+      display: flex;
+      gap: 60px;
+    }
+    .eye {
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 50%;
+    }
+    .mouth {
+      width: 200px;
+      height: 20px;
+      margin-top: 30px;
+      background: white;
+      border-radius: 10px;
+      animation: talk 0.3s infinite alternate;
+    }
+    @keyframes talk {
+      from { height: 20px; }
+      to { height: 60px; }
+    }
+
+    /* Captions */
+    .caption {
+      margin-top: 50px;
+      font-size: 28px;
+      max-width: 80%;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="face">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+    <div class="mouth"></div>
+  </div>
+  <div id="caption" class="caption">Hello, I am temi!</div>
+
+  <script>
+    // Function to change captions
+    function showCaption(text) {
+      document.getElementById('caption').innerText = text;
+    }
+
+    // Example demo script (timed captions)
+    setTimeout(() => showCaption("This is the Okura station."), 2000);
+    setTimeout(() => showCaption("Next, the Festo MPS Station."), 6000);
+    setTimeout(() => showCaption("Now, meet the Dual Arm Yumi robot."), 10000);
+    setTimeout(() => showCaption("Finally, the Kawada Nextage robot."), 14000);
+  </script>
+</body>
+</html>
